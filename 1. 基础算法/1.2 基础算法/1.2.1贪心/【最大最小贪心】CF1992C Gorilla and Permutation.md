@@ -2,6 +2,8 @@
 
 ## 题目描述
 
+![[Pasted image 20240927141736.png]]
+
 Gorilla and Noobish\_Monk found three numbers $ n $ , $ m $ , and $ k $ ( $ m < k $ ). They decided to construct a permutation $ ^{\dagger} $ of length $ n $ .
 
 For the permutation, Noobish\_Monk came up with the following function: $ g (i) $ is the sum of all the numbers in the permutation on a prefix of length $ i $ that are not greater than $ m $ . Similarly, Gorilla came up with the function $ f $ , where $ f (i) $ is the sum of all the numbers in the permutation on a prefix of length $ i $ that are not less than $ k $ . A prefix of length $ i $ is a subarray consisting of the first $ i $ elements of the original array.

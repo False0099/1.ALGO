@@ -2,7 +2,7 @@
 
 ## 题面翻译
 
-有 $n$ 把枪，第 $i$ 把枪的攻击力是 $p_i = f_i \cdot d_i$。你需要调整 $d_i$ 使得 $ \max\limits_{1 \le i \le n}{p_i} - \min\limits_{1 \le i \le n}{p_i} \le k $，要保证 $d_i > 0$，求最少调整几把枪的 $d_i$ 可以满足条件。
+有 $n$ 把枪，第 $i$ 把枪的攻击力是 $p_i = f_i \cdot d_i$。你需要调整 $d_i$ 使得 $\max\limits_{1 \le i \le n}{p_i} - \min\limits_{1 \le i \le n}{p_i} \le k$，要保证 $d_i > 0$，求最少调整几把枪的 $d_i$ 可以满足条件。
 
 ## 题目描述
 

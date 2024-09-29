@@ -61,47 +61,26 @@ int s[N];
 typedef pair<int,int> PII;
 
 void solve(){
-
     cin>>n>>k;
-
     for(int i=1;i<=n;i++){
-
         cin>>e[i];
-
     }
-
     for(int i=1;i<=n;i++){
-
         s[i]=s[i-1]+e[i];
-
     }
-
     deque<PII> dq;
-
     dq.push_back({0,0});//为什么要加着一个？
-
     for(int r=1;r<=n;r++){
-
         int b=f[r-1]-s[r];
-
         while(dq.size()&&dq.front().first<r-k){
-
             dq.pop_front();
-
         }        
-
         while(dq.size()&&dq.back().second<b){
-
             dq.pop_back();
-
         }
-
         dq.push_back({r,b});
-
         f[r]=max(f[r],dq.front().second+s[r]);
-
     }
-
     cout<<f[n]<<endl;
 
 }
