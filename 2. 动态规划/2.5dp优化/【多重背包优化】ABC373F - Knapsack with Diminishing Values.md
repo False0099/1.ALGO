@@ -46,70 +46,31 @@ $f[i][j]=\max(f[i-1][j-w[i]]+v[i]-2*k+1)$
 $f[j]=f[j-w]+v(w,k)-2*k+1$。但是，我们注意到一个问题，我们的**w->v**不是一个一对一的映射，也就是说，我们的一个 $w$ 可能会对应多个**不同的 v**，那么我们这个时候可以考虑将我们的对应的映射设置为 $f(w)=v$,也就是我们在**选择了单个代价为 w，总共使用了 k 个，我们的最终最大受益**，这个显然我们可以通过一个单调队列来进行同台的处理。
 ```cpp
 #include <bits/stdc++.h>
-
 #define int long long
-
 #define fi first
-
 #define se second
-
-  
-
 using namespace std;
-
-  
-
 const int N = 3e3 + 10;
-
-  
-
 int n, m;
-
 priority_queue<int> heap[N];
-
 int dp[N];
-
-  
-
 signed main() {
-
     cin.tie(0);
-
     cout.tie(0);
-
     ios::sync_with_stdio(0);
-
-  
-
     cin >> n >> m;
-
     for (int i = 1; i <= n; i ++) {
-
         int w, v;
-
         cin >> w >> v, heap[w].push(v - 1);
-
     }
-
     for (int i = 1; i <= m; i ++)
-
         for (int j = 1; j <= m / i && heap[i].size(); j ++) {
-
             int v = heap[i].top();
-
             heap[i].pop();
-
             for (int k = m; k >= i; k --) dp[k] = max(dp[k], dp[k - i] + v);
-
             heap[i].push(v - 2);
-
         }
-
     cout << *max_element(dp + 1, dp + 1 + m) << endl;
-
-  
-
     return 0;
-
 }
 ```

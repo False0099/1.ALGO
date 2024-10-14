@@ -109,7 +109,7 @@ In the first example, Linova can choose cities $ 2 $ , $ 5 $ , $ 6 $ , $ 7 $ to 
 In the second example, choosing cities $ 3 $ , $ 4 $ developing industry can reach a sum of $ 3 $ , but remember that Linova plans to choose exactly $ k $ cities developing industry, then the maximum sum is $ 2 $ .
 
 ## 题解
-我们本题的思路是：通过一个类似于我们的 [[【LCA和】洛谷 P3177 树上染色]]问题，去计算。
+我们本题的思路是：通过一个类似于我们的 [[【树上DP-树上路径】洛谷 P3177 树上染色]]问题，去计算。
 
 我们考虑把一个黑色点放在我们的该节点我们的贡献是多少。
 首先有个结论：如果有个点被选，那么所有它的后代节点都要被选，因为这样才能达到最大贡献，而这个节点又会让所有后代节点的贡献-1, 所以这个节点对答案的贡献为 -siz $_u$,然后者虑正贡献，显然就是它到根节点的路径上的节点数 (除去本身), 即 $\operatorname{dep}_u-1$,综上对于节点 $u$,它的贡献是 $\operatorname{dep}_u-1$，综上所诉，对于节点 u，他的贡献就是我们的 $-\mathrm{siz}_u+1+dep_{u}$,丢到优先队列里贪心取一手即可。
